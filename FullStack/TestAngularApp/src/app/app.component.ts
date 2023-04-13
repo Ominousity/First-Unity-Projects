@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FireService } from './fire.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TestAngularApp';
+  sendThis: any;
+
+  constructor(public fireservice: FireService) {
+    
+  }
+
+  
 }
