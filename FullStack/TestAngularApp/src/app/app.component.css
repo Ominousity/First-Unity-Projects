@@ -1,0 +1,74 @@
+#ServerBar{
+    background-color: #222222;
+    position: absolute;
+    left: 0px;
+    right: 80%;
+    height: 100%;
+}
+
+#Chat{
+    background-color: #222222;
+    position: absolute;
+    left: 20%;
+    right: 0px;
+    height: 100%;
+}
+
+#ChatHistory{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+}
+
+#Message{
+    background-color: #565656;
+    
+}
+
+#TextBox{
+    background-color: #222222;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 10%;
+}
+
+#SendField{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    left: 90%;
+    top: 0px;
+}
+
+#SendButton{
+    background-color: #565656;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 5%;
+    right: 5%;
+    font-size: 25px;
+}
+
+#InputField{
+    position: absolute;
+    right: 12%;
+    bottom: 0px;
+    left: 0px;
+    top: 0px;
+}
+
+#InputTextArea{
+    background-color: #565656;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 1%;
+    right: 1%;
+    font-size: 40px;
+    border-radius: 8px;
+}

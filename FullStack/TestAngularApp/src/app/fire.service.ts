@@ -3,6 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 
 import * as config from '../../firebaseconfig.js';
+import { timestamp } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,7 @@ export class FireService {
   getMessages() {
     this.firestore
     .collection('chat')
+    .orderBy('timestamp', 'desc')
     .onSnapshot(snapshot => {
       snapshot.docChanges().forEach(change => {
         if (change.type == "added"){

@@ -1,0 +1,18 @@
+<div id="ServerBar">
+
+</div>
+<div id="Chat">
+  <div id="ChatHistory">
+    <div id="Message" *ngFor="let m of fireservice.messages">
+      <h2>{{m.data.user}}</h2>
+    </div>
+  </div>
+  <div id="TextBox">
+    <div id="InputField">
+      <textarea id="InputTextArea" [(ngModel)]="sendThis"></textarea>
+    </div>
+    <div id="SendField">
+      <button id="SendButton" mat-button (click)="fireservice.sendMessage(sendThis)">Send</button>
+    </div>
+  </div>
+</div>
