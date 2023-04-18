@@ -5,6 +5,7 @@
   <div id="ChatHistory">
     <div id="Message" *ngFor="let m of fireservice.messages">
       <h2>{{m.data.user}}</h2>
+      <h4>{{m.data.timestamp}}</h4>
     </div>
   </div>
   <div id="TextBox">

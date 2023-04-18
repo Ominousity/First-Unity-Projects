@@ -1,5 +1,5 @@
 #ServerBar{
-    background-color: #222222;
+    background-color: #2c2c34;
     position: absolute;
     left: 0px;
     right: 80%;
@@ -7,7 +7,7 @@
 }
 
 #Chat{
-    background-color: #222222;
+    background-color: #34343c;
     position: absolute;
     left: 20%;
     right: 0px;
@@ -23,12 +23,13 @@
 }
 
 #Message{
-    background-color: #565656;
+    background-color: #34343c;
+    color: lightgray;
     
 }
 
 #TextBox{
-    background-color: #222222;
+    background-color: #34343c;
     position: absolute;
     bottom: 0px;
     right: 0px;
@@ -49,8 +50,8 @@
     position: absolute;
     top: 10%;
     bottom: 10%;
-    left: 5%;
-    right: 5%;
+    left: 0%;
+    right: 15%;
     font-size: 25px;
 }
 
