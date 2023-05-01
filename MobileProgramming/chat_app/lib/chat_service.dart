@@ -74,8 +74,12 @@ class ChatService {
     });
   }
 
-  void addMember(Channel channel, String uid) {
-    channel.members.add(uid);
-    return _channelsController.add([..._channels]);
+  Future<void> addMember(Channel channel, String uid) async {
+    await FirebaseFirestore.instance
+    .collection(CollectionNames.channels)
+    .doc(channel.id)
+    .update({
+      ChannelKeys.members: FieldValue.arrayUnion([uid])
+    });
   }
 }

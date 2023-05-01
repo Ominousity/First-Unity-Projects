@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'sender.dart';
 
 class MessageKeys {
@@ -20,7 +22,7 @@ class Message {
 
   Message.fromMap(this.id, Map<String, dynamic> data)
       // TODO
-      : timestamp = data[MessageKeys.timestamp],
+      : timestamp = (data[MessageKeys.timestamp] as Timestamp?)?.toDate(),
         from = Sender.fromMap(data[MessageKeys.from]),
         content = data[MessageKeys.content];
 

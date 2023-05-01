@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 import '../models/user.dart';
 
@@ -19,8 +20,12 @@ class UidButton extends StatelessWidget {
             content: SizedBox(
               width: 200,
               height: 200,
-              // TODO
-              child: Text(user.uid),
+              child: QrImage(
+                data: user.uid,
+                version: QrVersions.auto,
+                size: 200,
+                ),
+              
             ),
             actions: [
               TextButton(

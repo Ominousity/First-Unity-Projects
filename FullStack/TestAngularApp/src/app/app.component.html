@@ -1,19 +1,48 @@
-<div id="ServerBar">
-
+<div *ngIf="fireservice.auth.currentUser == null">
+  <div id="ButtonBar">
+    <button (click)="StateChangeSignIn()">Sign In</button>        
+    <button (click)="StateChangeSignUp()">Sign Up</button>
+  </div>
+  <div id="Inputs">
+    <p>{{state}}</p>
+    <!--<input id="UsernameInput" type="text" placeholder="DisplayName" [(ngModel)]="displayName">-->
+    <input type="email" placeholder="Email" [(ngModel)]="email">
+    <input type="password" placeholder="Password" [(ngModel)]="password">
+    <button id="OkButton" (click)="LoginOrSignup(email, password)">Ok</button>
+  </div>
 </div>
-<div id="Chat">
-  <div id="ChatHistory">
-    <div id="Message" *ngFor="let m of fireservice.messages">
-      <h2>{{m.data.user}}</h2>
-      <h4>{{m.data.timestamp}}</h4>
+
+<div *ngIf="fireservice.auth.currentUser">
+  <div id="ServerBar">
+    <div id="Logo">
+      <div id="SignOutDiv">
+        <button id="SignOutButton" (click)="fireservice.SignOut()">SignOut</button>
+      </div>
+      <div id="HelloText">
+        <h2>Hello!</h2>
+        <h2>{{fireservice.auth.currentUser.email}}</h2>
+      </div>
+    </div>
+    <div id="ButtonGroup">
+      <button *ngFor="let b of fireservice.channels" (click)="fireservice.getMessages(b.data.id)">
+        <h1>{{b.data.name}}</h1>
+      </button>
     </div>
   </div>
-  <div id="TextBox">
-    <div id="InputField">
-      <textarea id="InputTextArea" [(ngModel)]="sendThis"></textarea>
+  <div id="Chat">
+    <div id="ChatHistory">
+      <div id="Message" *ngFor="let m of fireservice.messages">
+        <h2>{{m.data.user}}</h2>
+        <h4>{{m.data.timestamp}}</h4>
+      </div>
     </div>
-    <div id="SendField">
-      <button id="SendButton" mat-button (click)="fireservice.sendMessage(sendThis)">Send</button>
+    <div id="TextBox">
+      <div id="InputField">
+        <textarea id="InputTextArea" [(ngModel)]="message"></textarea>
+      </div>
+      <div id="SendField">
+        <button id="SendButton" mat-button (click)="fireservice.sendMessage(message)">Send</button>
+      </div>
     </div>
   </div>
 </div>
